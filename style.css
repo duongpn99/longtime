@@ -1,0 +1,6 @@
+.left-side{
+    display: grid;
+    grid-template: auto 1fr auto/auto 1fr auto;
+    background-color: red;
+    text-align: center;
+}
