@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular-sanitize.min.js"></script>
+</head>
+<body>
+    <!--M:model; C: controller V:view-->
+    <!--Model xu ly cac nghiep vu(function)
+    controler: nhan va dieu huong cac request toi :model va view
+    view: load(binding) du lieu tu model.
+    (giao tiep giua controller va view su dung $scope)-->
+    <script src="ag2-module.js"></script>
+    <script src="ag2-controller.js"></script>
+    <h2>MCV design patter demo</h2>
+    <div ng-app="myApp" ng-controller="myController">
+        Vowels:
+        <button ng-click="ch('A')">A</button>
+        <button ng-click="ch('E')">E</button>
+        <button ng-click="ch('I')">I</button>
+        <button ng-click="ch('O')">O</button>
+        <button ng-click="ch('U')">U</button>
+        <p>{{ choice }}</p>
+        List:
+        <select ng-option="option for option in list"
+        ng-model="mychoice"
+        ng-change="c()">
+    </select>
+        <p>{{choice}}</p>
+    </div>
+</body>
+</html>
