@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.min.js" integrity="sha512-niUuJjkxAzo4wrTq1hZUHVZ39m6DI4/TljvknrBk2NTEZu8oJDijPF2Ud7RaNtBMz+FWX3Gp/QaD5P5ZeUI/2Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="ag4.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="App" ng-controller="contactController">
+        <form action="">
+            Name:
+            <input type="text" name="name" ng-model="newcontact.name"/>
+            Email:
+            <input type="email" name="email" ng-model="newcontact.email"/>
+            Phone:
+            <input type="text" name="phone" ng-model="newcontact.phone"/>
+            <br>
+            <input type="hidden" ng-model="newcontact.id"/>
+            <br>
+            <input type="button" value="Save" ng-click="saveContact()"/>
+        </form>
+        <br>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contact in contacts">
+                    <td>{{contact.name}}</td>
+                    <td>{{contact.email}}</td>
+                    <td>{{contact.phone}}</td>
+                    <td>
+                        <a href="#" ng-click="edit(contact.id)">edit</a>
+                        <a href="#" ng-click="delete(contact.id)">delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
